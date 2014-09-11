@@ -1,4 +1,9 @@
 name := "sbt-unity-package"
 
-version := "1.0"
-    
+organization := "com.mindwaves-studio"
+
+version := "1.0-SNAPSHOT"
+
+unitySettings
+
+UnityKeys.unityPackageSourceDirectories in Compile := Seq(s"Assets/${normalizedName.value}_main")
