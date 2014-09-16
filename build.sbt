@@ -4,6 +4,6 @@ organization := "com.mindwaves-studio"
 
 version := "1.0-SNAPSHOT"
 
-unitySettings
+unityPackageSettings
 
-UnityKeys.unityPackageSourceDirectories in Compile := Seq(s"Assets/${normalizedName.value}_main")
+mappings in (Compile, packageBin) := Seq((file(""), s"Assets/${normalizedName.value}"))
