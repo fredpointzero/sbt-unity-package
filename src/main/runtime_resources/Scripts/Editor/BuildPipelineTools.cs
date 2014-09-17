@@ -29,14 +29,9 @@ namespace MW
 			ExportPackage(sourceAssets, output, ExportPackageOptions.Recurse);
 		}
 
-		private static void ExportPackage(string[] sourceAssets, string output, ExportPackageOptions flags)
+		public static void ExportPackage(string[] sourceAssets, string output, ExportPackageOptions flags)
 		{
-			flags |= ExportPackageOptions.Recurse;
-			if (sourceAssets.Any(s => s.Contains("ProjectSettings")))
-			{
-				sourceAssets = sourceAssets.Where(s => !s.Contains("ProjectSettings")).ToArray();
-				flags |= ExportPackageOptions.IncludeLibraryAssets;
-			}
+			ProcessExportPackageArgs(ref sourceAssets, ref output, ref flags);
 			
 			Debug.Log("Generating package at: " + output);
 			Debug.Log("Options: " + flags);
@@ -44,7 +39,18 @@ namespace MW
 			{
 				Debug.Log("Source Asset: " + path);
 			}
+
 			AssetDatabase.ExportPackage(sourceAssets, output, flags);
+		}
+
+		public static void ProcessExportPackageArgs(ref string[] sourceAssets, ref string output, ref ExportPackageOptions flags)
+		{
+			flags |= ExportPackageOptions.Recurse;
+			if (sourceAssets.Any(s => s.Contains("ProjectSettings")))
+			{
+				sourceAssets = sourceAssets.Where(s => !s.Contains("ProjectSettings")).ToArray();
+				flags |= ExportPackageOptions.IncludeLibraryAssets;
+			}
 		}
 
 		private static Dictionary<string, List<string>> Parse(IEnumerable<string> tokens, params string[] fields)
