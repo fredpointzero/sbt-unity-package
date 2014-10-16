@@ -1,4 +1,9 @@
 name := "sbt-unity-package"
 
-version := "1.0"
-    
+organization := "com.mindwaves-studio"
+
+version := "1.0-SNAPSHOT"
+
+unityPackageSettings
+
+mappings in (Compile, packageBin) := Seq((file(""), s"Assets/${normalizedName.value}"))
