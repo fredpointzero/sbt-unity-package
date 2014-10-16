@@ -1,6 +1,11 @@
+/*
+ * Copyright (c) 2014 Frédéric Vauchelles
+ *
+ * See the file license.txt for copying permission.
+ */
 name := "sbt-unity-package"
 
-organization := "com.mindwaves-studio"
+organization := "org.fredericvauchelles"
 
 version := "1.0-SNAPSHOT"
 

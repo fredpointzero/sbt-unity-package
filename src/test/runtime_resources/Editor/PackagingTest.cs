@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Copyright (c) 2014 Frédéric Vauchelles
+ *
+ * See the file license.txt for copying permission.
+ */
+using System;
 using System.Threading;
 using NUnit.Framework;
 using System.IO;
