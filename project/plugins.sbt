@@ -5,4 +5,4 @@
  */
 logLevel := Level.Warn
 
-addSbtPlugin("com.mindwaves-studio" % "sbt-unity" % "1.0-SNAPSHOT")
+addSbtPlugin("org.fredericvauchelles" % "sbt-unity" % "1.2-SNAPSHOT")
