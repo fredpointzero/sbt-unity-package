@@ -7,7 +7,7 @@ name := "sbt-unity-package"
 
 organization := "org.fredericvauchelles"
 
-version := "1.2-SNAPSHOT"
+version := "1.2"
 
 unityPackageSettings
 
